@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f61af3b597838b40b3710314f6ec70e, type: 3}
-  m_Name: BasicGun
-  m_EditorClassIdentifier: Assembly-CSharp::GunData
-  rateOfFire: 20
+  m_Script: {fileID: 11500000, guid: 2000e2546f6755f45aba06be2a08b771, type: 3}
+  m_Name: Triangle enemy
+  m_EditorClassIdentifier: Assembly-CSharp::EnemysData
+  hp: 5
+  cost: 1
+  damage: 50
+  knockbackPower: 40
+  speed: 6
