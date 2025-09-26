@@ -20,12 +20,18 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        EnemyManager enemy = collision.gameObject.GetComponent<EnemyManager>();
-        if (enemy != null)
+        GameObject other = collision.collider.gameObject;
+        if (other.CompareTag("Wall"))
         {
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag("Enemy"))
+        {
+            if(other.TryGetComponent<EnemyManager>(out var enemy))
             enemy.TakeDmg(BulletData.damage);
             Destroy(gameObject);
         }
+        
     }
 
  

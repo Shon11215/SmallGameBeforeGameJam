@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Triangle enemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemysData
   hp: 5
-  cost: 1
+  cost: 2
   damage: 50
   knockbackPower: 40
   speed: 6
