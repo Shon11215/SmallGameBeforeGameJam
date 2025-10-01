@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: -869915699
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f00b78244060d14cbe8ebe11e181a83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
   enemyData: {fileID: 11400000, guid: bba832cb96b0ab24dadfd148f105ac12, type: 2}
+  damage: 0
   slider: {fileID: 954930313500446312}
 --- !u!1001 &8647963429853161729
 PrefabInstance:

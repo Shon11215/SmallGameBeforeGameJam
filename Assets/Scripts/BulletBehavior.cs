@@ -5,6 +5,7 @@ public class BulletBehavior : MonoBehaviour
 {
     [SerializeField] BulletData BulletData;
     private Rigidbody2D rb;
+    public int damage;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,7 +29,7 @@ public class BulletBehavior : MonoBehaviour
         else if (other.CompareTag("Enemy"))
         {
             if(other.TryGetComponent<EnemyManager>(out var enemy))
-            enemy.TakeDmg(BulletData.damage);
+                enemy.TakeDmg(damage);
             Destroy(gameObject);
         }
         

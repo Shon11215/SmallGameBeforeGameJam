@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2000e2546f6755f45aba06be2a08b771, type: 3}
   m_Name: BasicEnemy
   m_EditorClassIdentifier: Assembly-CSharp::EnemysData
-  hp: 5
+  hp: 15
   cost: 1
   damage: 5
   knockbackPower: 20

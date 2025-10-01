@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
         currHp = maxHp;
     }
 
+
     // Update is called once per frame
     void Update()
     {

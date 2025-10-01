@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 1.0f;
     public Vector2 input;
-    public GameObject bullet;
+    //public GameObject bullet;
     private GunHandler gunHandler;
 
     private Rigidbody2D rb;

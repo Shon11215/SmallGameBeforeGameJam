@@ -15,5 +15,5 @@ MonoBehaviour:
   speed: 30
   damage: 2
   lifetime: 3
-  bulletX: 0.16
-  bulletY: 0.03
+  bulletX: 1
+  bulletY: 1

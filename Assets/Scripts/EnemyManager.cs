@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     //Stats
     private int hp;
     private float speed;
-    private int damage;
+    public int damage;
     private float knockBackPower;
     private int cost;
     private GameObject player;
@@ -34,7 +34,7 @@ public class EnemyManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log(cost);
+        //Debug.Log(cost);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -55,7 +55,9 @@ public class EnemyManager : MonoBehaviour
         if (hp < 0) {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 1)
             {
+                
                 gameManager.wave++;
+                gameManager.BoardSetup();
                 gameManager.SpawnWave();
             }
             Destroy(gameObject);
@@ -64,6 +66,11 @@ public class EnemyManager : MonoBehaviour
     public void DealDmg(int damage)
     {
         player.GetComponent<PlayerManager>().currHp -= damage;
+        if (player.GetComponent<PlayerManager>().currHp <=0)
+        {
+            var gm = FindFirstObjectByType<GameManager>();
+            if (gm != null) gm.PlayerDied();
+        }
         Vector2 knockbackDir = (player.GetComponent<Rigidbody2D>().transform.position - transform.position).normalized;
         playerController.StartCoroutine(player.GetComponent<PlayerController>().Knockback(knockbackDir, knockBackPower));
 

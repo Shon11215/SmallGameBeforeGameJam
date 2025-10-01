@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f61af3b597838b40b3710314f6ec70e, type: 3}
   m_Name: BasicGun
   m_EditorClassIdentifier: Assembly-CSharp::GunData
-  rateOfFire: 20
+  rateOfFire: 5

@@ -1,14 +1,20 @@
 using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> enemyPrefabs;
     private List<int> enemyCosts = new List<int>();
+    [SerializeField] private AbilitySystem abilitySystem;
+    [SerializeField] private GameObject panel;
+    [SerializeField] private TextMeshProUGUI waveTxt;
+
 
     public GameObject area;
     Vector2 randomDir;
@@ -39,8 +45,15 @@ public class GameManager : MonoBehaviour
     {
 
     }
+    public void BoardSetup()
+    {
+        panel.SetActive(true);
+        abilitySystem.FillBoard();
+        Time.timeScale = 0f;
+    }
     public void SpawnWave()
     {
+
         int budget = baseBudget + budgetGrowth * (wave - 1);
         List<int> enemies = new List<int>();
         int safty = 2000;
@@ -63,7 +76,20 @@ public class GameManager : MonoBehaviour
 
 
         }
+        waveTxt.text = "Wave: " + wave;
     }
 
+    public void OnChoise()
+    {
+        panel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void PlayerDied()
+    {
+        Time.timeScale = 1f;
+        wave = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }
 
